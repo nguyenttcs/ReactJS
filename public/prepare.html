@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My React App</title>
+
+    <!-- Import Bootstrap: START -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Import Bootstrap: END -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="root" class="container">
+        <div class="app-header mt-3 mb-3">
+            <div class="header-main row">
+                <div class="col-2 text-center">
+                    <img src="https://i.ibb.co/HtHWr8X/53-531599-file-gnome-stock-person-svg-generic-person-icon.jpg"
+                        width="120" alt="Person">
+                </div>
+                <div class="col-10 d-flex flex-column justify-content-between">
+                    <h5>First Name Last Name</h5>
+                    <h5>System Admin Global - Tenant A</h5>
+                    <a href="https://google.com">
+                        <h5>Edit</h5>
+                    </a>
+                </div>
+            </div>
+            <hr class="header-line">
+            <div class="header-menu border border-secondary">
+                <ul class="header-menu-ul">
+                    <li class="menu-item">
+                        <a class="text-dark" href="https://google.com">Localisation</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="text-dark" href="https://google.com">System Config</a>
+                    </li>
+                    <li class="menu-item contents">
+                        <a class="text-dark" href="https://google.com">Contents</a>
+                        <div class="contents-item border border-secondary">
+                            <p>View All</p>
+                            <p>Search</p>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <a class="text-dark" href="https://google.com">Features</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="text-dark" href="https://google.com">Operator</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h3>CONTENTS</h3>
+        <div class="app-subtenant d-flex mt-3">
+            <h5 class="mr-4">Select Sub-Tenant</h5>
+            <select class="form-control col-2 mr-4" name="subtenant" id="subtenant">
+                <option value="1">Sub-Tenant 1</option>
+                <option value="2">Sub-Tenant 2</option>
+            </select>
+            <button type="button" class="btn btn-secondary col-1">Load</button>
+        </div>
+        <div class="app-brand">
+            <div class="brand-item">
+                <fieldset class="brand-border">
+                    <legend class="brand-border">Brand BR1</legend>
+                    <div class="brand-content row">
+                        <label class="col-2 ml-3">Review</label>
+                        <img class="col-3" src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg">
+                        <div class="col-6 d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn btn-outline-dark mr-3">Browser</button>
+                            <button type="button" class="btn btn-outline-dark mr-3">Reset</button>
+                            <button type="button" class="btn btn-outline-dark">Apply</button>
+                        </div>
+                </fieldset>
+            </div>
+            <div class="brand-item">
+                <fieldset class="brand-border">
+                    <legend class="brand-border">Brand BR1</legend>
+                    <div class="brand-content row">
+                        <label class="col-2 ml-3">Review</label>
+                        <img class="col-3" src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg">
+                        <div class="col-6 d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn btn-outline-dark mr-3">Browser</button>
+                            <button type="button" class="btn btn-outline-dark mr-3">Reset</button>
+                            <button type="button" class="btn btn-outline-dark">Apply</button>
+                        </div>
+                </fieldset>
+            </div>
+            <div class="brand-item">
+                <fieldset class="brand-border">
+                    <legend class="brand-border">Brand BR1</legend>
+                    <div class="brand-content row">
+                        <label class="col-2 ml-3">Review</label>
+                        <img class="col-3" src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg">
+                        <div class="col-6 d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn btn-outline-dark mr-3">Browser</button>
+                            <button type="button" class="btn btn-outline-dark mr-3">Reset</button>
+                            <button type="button" class="btn btn-outline-dark">Apply</button>
+                        </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
