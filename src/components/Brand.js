@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { showBrand, fetchBrand } from '../reduxs/actions/action';
+import $ from 'jquery'
 
 class Brand extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            brands: [
-            ],
+            key: null,
             previewUrl: '',
         }
     }
@@ -15,8 +15,16 @@ class Brand extends Component {
     componentDidMount() {
         fetchBrand().then(res => {
             this.props.showBrand(res);
-            
         })
+    }
+
+    handleBrowser = (e) => {
+        // console.log(e);
+        this.setState({
+            key: e,
+            previewUrl: ''
+        })
+
     }
 
     onChange = (e) => {
@@ -24,7 +32,7 @@ class Brand extends Component {
         // console.log(files);
         let reader = new FileReader();
         reader.onload = r => {
-            console.log(r.target.result);
+            // console.log(r.target.result);
             this.setState({
                 previewUrl: r.target.result
             })
@@ -41,9 +49,7 @@ class Brand extends Component {
     renderOptions = () => {
         const { listBrand, subTenantId } = this.props;
         // console.log("Test SubtenantId: "+ subTenantId)
-        // console.log(listBrand);
-        console.log(this.state.brands[0]);
-        
+
 
         return listBrand && listBrand.filter(item => item.subTenantId === parseInt(subTenantId, 10)).map(item => {
             return (
@@ -53,15 +59,15 @@ class Brand extends Component {
                         <div className="brand-content row">
                             <label className="col-2 ml-3">Review</label>
                             {
-                                this.state.previewUrl === '' ? <img className="col-3" src={item.url} alt="img1" /> : <img className="col-3" src={this.state.previewUrl} alt="img1" />
+                                this.state.previewUrl !== '' && item.id === this.state.key ? <img className="col-3" src={this.state.previewUrl} alt="img1" /> : <img className="col-3" src={item.url} alt="img1" />
                             }
                             <div className="col-6 d-flex align-items-center justify-content-center">
                                 <div className="mr-3">
-                                    <label htmlFor={`file-upload${item.id}`} className="custom-file-upload btn btn-outline-dark">
+                                    <label htmlFor={`file-upload${item.id}`} className="custom-file-upload btn btn-outline-dark" onClick={() => this.handleBrowser(item.id)}>
                                         Browser
                                     </label>
                                     <span className="file-selected"></span>
-                                    <input id={`file-upload${item.id}`} ref="file" type="file" onChange={e => this.onChange(e)} />
+                                    <input id={`file-upload${item.id}`} ref="file" data-value={item.id} type="file" onChange={e => this.onChange(e)} />
                                     {/* <input id="file-upload" type="file" onChange={this.onImageChange} value={this.state.url} /> */}
                                 </div>
                                 <button type="button" className="btn btn-outline-dark mr-3" onClick={this.handleReset}>Reset</button>
